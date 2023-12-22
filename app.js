@@ -49,13 +49,13 @@ Array.from(boxes).forEach(function (ele) {
         if (isOver) {
             resetGame();
         }
-        else if (boxText.innerText === "") {
+        if(boxText.innerText === "") {
             boxText.innerText = turn;
-            turn = changeTurn(turn);
             ting.play();
+            turn = changeTurn(turn);
             checkwin();
             if (!isOver) {
-                document.getElementsByClassName('info')[0].innerText = "Turn for " + boxText.innerText;
+                document.getElementsByClassName('info')[0].innerText = "Turn for " + turn;
             }
         }
     });
